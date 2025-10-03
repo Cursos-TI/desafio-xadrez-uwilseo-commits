@@ -5,7 +5,10 @@ int main() {
     int casas_torre = 5;      // Torre se move 5 casas
     int casas_bispo = 5;      // Bispo se move 5 casas
     int casas_rainha = 8;     // Rainha se move 8 casas
+    int casas_cavalo_baixo = 2;   // Cavalo se move 2 casas para baixo
+    int casas_cavalo_esquerda = 1; // Cavalo se move 1 casa para esquerda
     int contador;             // Variável auxiliar para contadores
+    int i, j;                 // Variáveis para loops aninhados do Cavalo
     
     // ========================================
     // MOVIMENTO DA TORRE
@@ -60,6 +63,38 @@ int main() {
         printf("Esquerda\n");
         contador++;
     } while (contador <= casas_rainha);
+    
+    printf("\n");
+    
+    // ========================================
+    // MOVIMENTO DO CAVALO
+    // ========================================
+    printf("===== MOVIMENTO DO CAVALO =====\n");
+    printf("O Cavalo move-se em 'L' (2 casas para baixo e 1 casa para esquerda):\n\n");
+    
+    /*
+     * Estrutura de LOOPS ANINHADOS para o Cavalo
+     * O Cavalo realiza um movimento característico em "L":
+     * - Primeiro: move-se 2 casas para baixo (loop externo FOR)
+     * - Depois: move-se 1 casa para esquerda (loop interno WHILE)
+     * 
+     * Loop externo (FOR): controla o movimento vertical (2 casas para baixo)
+     * Loop interno (WHILE): controla o movimento horizontal (1 casa para esquerda)
+     * 
+     * Esta estrutura simula o movimento completo em "L" do Cavalo
+     */
+    
+    // Loop externo FOR: percorre as casas verticais (movimento para baixo)
+    for (i = 1; i <= casas_cavalo_baixo; i++) {
+        printf("Baixo\n");
+    }
+    
+    // Loop interno WHILE: percorre as casas horizontais (movimento para esquerda)
+    j = 1;
+    while (j <= casas_cavalo_esquerda) {
+        printf("Esquerda\n");
+        j++;
+    }
     
     printf("\n");
     printf("===== MOVIMENTOS CONCLUIDOS =====\n");
